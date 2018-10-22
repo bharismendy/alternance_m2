@@ -51,10 +51,40 @@ dans le fichier de configuration on modifie les lignes suivantes (note le point-
     domain = xbricegr2.cg49.fr
 
 ### Ajout du plugin zabbix
+Si vous avez un proxy sur votre réseau vous devez renseigner le fichier suivant :
 
+    sudo nano /etc/environement
+    http_proxy="http://proxysrv:8080/"
+    https_proxy="https://proxysrv:8080/"
+
+puis on applique les variables :
+
+    export http_proxy="http://proxysrv:8080/"
+    export https_proxy="https://proxysrv:8080/"
+
+On install le plugin :
+
+    grafana-cli plugins install alexanderzobnin-zabbix-app
+
+Redémarrage de grafana pour appliquer le plugin :
+
+    systemctl restart grafana-server
+
+Ensuite allez dans votre interface web et passez le plugin en "enable" :
+
+![étape 1 activation](/image/enable_zabbix_1.png)
+cliquer sur le bouton enable une nouvelle fois :
+
+![étape 2 activation](/image/enable_zabbix_2.png)
+
+
+allez ensuite sur "add data Source" :
+
+![creation du watcher](/image/creation_watcher.png)
 
 ### Sources
 
 * http://docs.grafana.org/installation/rpm/
 * https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-grafana-to-plot-beautiful-graphs-from-zabbix-on-centos-7
 * http://docs.grafana.org/installation/configuration/
+* http://www.thesysadminhimself.com/2013/08/configuring-web-proxy-on-centos.html
