@@ -45,7 +45,7 @@ on autorise grafana à utiliser le port 80 :
 
     sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/grafana-server
 
-dans le fichier de configuration on modifie les lignes suivantes (note le point-virgule est utilisé pour commenter un paramètre dans les fichier .ini):
+dans le fichier de configuration on modifie les lignes suivantes (note, le point-virgule est utilisé pour commenter un paramètre dans les fichiers .ini):
 
     http_port = 80
     domain = xbricegr2.cg49.fr
