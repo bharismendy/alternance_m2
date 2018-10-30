@@ -38,7 +38,7 @@ nous allons changers les valeurs suivantes :
 enfin pensez à redémarrer l'agent.
 
 ### passage via Proxy
-pour le passage du client via un proxy il nous faut renseigner le paramètre server en lui indiquant l'adresse du proxy (cela servira pour les remontées passives), ensuite on décommette le paramètre ListenIP et enfin on passe le StartAgents à 1 (on ajoute un thread d'écoute visible avec la commande "ps fax").
+pour le passage du client via un proxy il nous faut renseigner le paramètre server en lui indiquant l'adresse du proxy (cela servira pour les remontées passives), enfin on passe le StartAgents à 1 (on ajoute un thread d'écoute visible avec la commande "ps fax").
 
 ### Sources
 
