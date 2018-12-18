@@ -4,14 +4,14 @@
 ------------------------------
 introduction
 ----
-Ce document simple rédigé en Markdown à pour but de documenter la création d'un tableau de bord.
+Ce document simple rédigé en Markdown a pour but de documenter la création d'un tableau de bord.
 
 ### Création d'un tableau de bord
 
 nous allons tout d'abord nous rendre dans l'interface de gestion des tableaux de bord :
 ![étape 1 création d'un tableau de bord](/image/creation_dashboard_1.png)
 
-nous allons ensuite demander à grafana la création d'un tableau de bord :
+nous allons ensuite demander à Grafana la création d'un tableau de bord :
 
 ![étape 2 création d'un tableau de bord](/image/creation_dashboard_2.png)
 

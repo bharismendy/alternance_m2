@@ -4,11 +4,11 @@
 ------------------------------
 introduction
 ----
-Ce document simple rédigé en Markdown à pour but de documenter la mise en place de grafana et son interfaçage avec zabbix.
+Ce document simple rédigé en Markdown a pour but de documenter la mise en place de grafana et son interfaçage avec zabbix.
 
 
 ### Installation de Grafana
-  on va commencer par ajouter le dépôt pour cela on commence par le définir :
+  On va commencer par ajouter le dépôt pour cela on commence par le définir :
 
     sudo nano /etc/yum.repos.d/grafana.repo
 
@@ -24,13 +24,13 @@ Ensuite nous entrons le contenu suivant :
     sslverify=1
     sslcacert=/etc/pki/tls/certs/ca-bundle.crt
 
-pour finir on installe le paquet grafana :
+Pour finir on installe le paquet grafana :
 
     yum install grafana
 
 ### configuration de base de grafana
 
-on commence par activer le service au démarrage et on le démarre :
+On commence par activer le service au démarrage et on le démarre :
 
     systemctl enable grafana-server
     systemctl enable grafana-server
@@ -41,7 +41,7 @@ activation de l'option de rendu d'image :
     yum install freetype*
     yum install urw-fonts
 
-on autorise grafana à utiliser le port 80 :
+on autorise Grafana à utiliser le port 80 :
 
     sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/grafana-server
 

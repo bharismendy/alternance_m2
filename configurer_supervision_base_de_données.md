@@ -4,7 +4,7 @@
 ------------------------------
 introduction
 ----
-Ce document simple rédigé en Markdown à pour but de documenter la supervision d'une base de donnée sql server, PostgreSQL, Oracle ou encore MariaDB.
+Ce document simple rédigé en Markdown a pour but de documenter la supervision d'une base de données SQL Server, PostgreSQL, Oracle ou encore MariaDB.
 
 
 ### Les bases PostgreSQL
@@ -53,46 +53,46 @@ Dans odbc.ini :
 
 GNU nano 2.3.1                                                       Fichier : /etc/odbc.ini                                                                                                                     
 
-[psql]
-    Description = PostgreSQL database 1
-    Driver  = postgresql
-    #CommLog = /tmp/sql.log
-    Username = zabbix
-    Password = P@ssw0rd
-    # Name of Server. IP or DNS
-    Servername = 127.0.0.1
-    # Database name
-    Database = zabbix
-    # Postmaster listening port
-    Port = 5432
-    # Database is read only
-    # Whether the datasource will allow updates.
-    ReadOnly = No
-    # PostgreSQL backend protocol
-    # Note that when using SSL connections this setting is ignored.
-    # 7.4+: Use the 7.4(V3) protocol. This is only compatible with 7.4 and higher backends.
-    Protocol = 7.4+
-    # Includes the OID in SQLColumns
-    ShowOidColumn = No
-    # Fakes a unique index on OID
-    FakeOidIndex  = No
-    # Row Versioning
-    # Allows applications to detect whether data has been modified by other users
-    # while you are attempting to update a row.
-    # It also speeds the update process since every single column does not need to be specified in the where clause to update a row.
-    RowVersioning = No
-    # Show SystemTables
-    # The driver will treat system tables as regular tables in SQLTables. This is good for Access so you can see system tables.
-    ShowSystemTables = No
-    # If true, the driver automatically uses declare cursor/fetch to handle SELECT statements and keeps 100 rows in a cache.
-    Fetch = Yes
-    # Bools as Char
-    # Bools are mapped to SQL_CHAR, otherwise to SQL_BIT.
-    BoolsAsChar = Yes
-    # SSL mode
-    #SSLmode = Yes
-    # Send tobackend on connection
-    ConnSettings =
+    [psql]
+      Description = PostgreSQL database 1
+      Driver  = postgresql
+      #CommLog = /tmp/sql.log
+      Username = zabbix
+      Password = P@ssw0rd
+      # Name of Server. IP or DNS
+      Servername = 127.0.0.1
+      # Database name
+      Database = zabbix
+      # Postmaster listening port
+      Port = 5432
+      # Database is read only
+      # Whether the datasource will allow updates.
+      ReadOnly = No
+      # PostgreSQL backend protocol
+      # Note that when using SSL connections this setting is ignored.
+      # 7.4+: Use the 7.4(V3) protocol. This is only compatible with 7.4 and higher backends.
+      Protocol = 7.4+
+      # Includes the OID in SQLColumns
+      ShowOidColumn = No
+      # Fakes a unique index on OID
+      FakeOidIndex  = No
+      # Row Versioning
+      # Allows applications to detect whether data has been modified by other users
+      # while you are attempting to update a row.
+      # It also speeds the update process since every single column does not need to be specified in the where clause to update a row.
+      RowVersioning = No
+      # Show SystemTables
+      # The driver will treat system tables as regular tables in SQLTables. This is good for Access so you can see system tables.
+      ShowSystemTables = No
+      # If true, the driver automatically uses declare cursor/fetch to handle SELECT statements and keeps 100 rows in a cache.
+      Fetch = Yes
+      # Bools as Char
+      # Bools are mapped to SQL_CHAR, otherwise to SQL_BIT.
+      BoolsAsChar = Yes
+      # SSL mode
+      #SSLmode = Yes
+      # Send tobackend on connection
+      ConnSettings =
 
 
 

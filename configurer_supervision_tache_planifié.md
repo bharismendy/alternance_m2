@@ -4,7 +4,7 @@
 ------------------------------
 introduction
 ----
-Ce document simple rédigé en Markdown à pour but de documenter la supervision d'un service.
+Ce document simple rédigé en Markdown a pour but de documenter la supervision d'un service.
 
 
 
@@ -52,7 +52,7 @@ A noter que l'on indique ">=60" car on souhaite être signaler si le process a p
 nous avons maintenant configuré le serveur il faut configurer le client
 
 ### Configuration du client
-Dans le fichier de configuration du client (*/etc/zabbix/zabbix_agentd.conf*) on dé commente les lignes suivantes et on modifie les valeurs :
+Dans le fichier de configuration du client (*/etc/zabbix/zabbix_agentd.conf*) on décommente les lignes suivantes et on modifie les valeurs :
 
     LogRemoteCommands=1
     EnableRemoteCommands=1
@@ -60,4 +60,3 @@ Dans le fichier de configuration du client (*/etc/zabbix/zabbix_agentd.conf*) on
 puis on redémarre le service :
 
     systemctl restart zabbix-agent
-    

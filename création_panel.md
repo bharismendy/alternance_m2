@@ -4,11 +4,11 @@
 ------------------------------
 introduction
 ----
-Ce document simple rédigé en Markdown à pour but de documenter la mise en place d'un panel.
+Ce document simple rédigé en Markdown a pour but de documenter la mise en place d'un panel.
 
 
 ### Ajout d'un panel
-nous commençons par ajouter un panel dans notre cas un singlestat :
+Nous commençons par ajouter un panel dans notre cas un singlestat :
 
 ![ajout d'un panel étape 1](/image/creation_panel_1.png)
 

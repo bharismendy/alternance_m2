@@ -4,7 +4,7 @@
 ------------------------------
 introduction
 ----
-Ce document simple rédigé en Markdown à pour but de documenter la mise en place du proxy Zabbix.
+Ce document simple rédigé en Markdown a pour but de documenter la mise en place du proxy Zabbix.
 
 ### Prérequis
 
@@ -80,7 +80,7 @@ dans le fichier */var/lib/pgsql/data/pg_hba.conf* veuillez a ce que le contenu s
     Proxy mode : Active
     Proxy address : adresse ip / dns
 
-    
+
 ### Sources
 
 * https://www.zabbix.com/documentation/4.0/manual/installation/install_from_packages/rhel_centos#importing_data

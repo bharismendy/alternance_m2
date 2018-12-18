@@ -5,7 +5,7 @@
 introduction
 ----
 
-Ce document simple rédigé en Markdown à pour but de documenter la mise en place d'un serveur tomcat 8 et de sa supervision dans zabbix.
+Ce document simple rédigé en Markdown a pour but de documenter la mise en place d'un serveur tomcat 8 et de sa supervision dans zabbix.
 
 ### Installation de java
 

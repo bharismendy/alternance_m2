@@ -4,15 +4,17 @@
 ------------------------------
 introduction
 ----
-Ce document simple rédigé en Markdown à pour but de documenter la supervision d'un service.
+Ce document simple rédigé en Markdown a pour but de documenter la supervision d'un service.
 Nous allons ici tenter de superviser le service httpd
 
 ### Mise en place de l'item
 Pour commencer nous allons commencer par créer un item qui supervisera le service :
-( a noter que j'ai fait "create new item" dans le template os linux web server)
+(à noter que j'ai fait "create new item" dans le template os linux web server)
+
+
 ![description de l'item](/image/creation_item_supervision.png)
 
-la clé nous permet de dire que l'on veut superviser le service et comment on le supervise. de plus ici j'utilise proc.num car je veux aussi connaître le nombre de processus pou le remonté dans grafana, si on voulais uniquement connaitre l'état on aurait utilisé service.info  
+la clé nous permet de dire que l'on veut superviser le service et comment on le supervise. de plus ici j'utilise proc.num car je veux aussi connaître le nombre de processus pour le remonté dans grafana, si on voulait uniquement connaître l'état on aurait utilisé service.info  
 
 ### Mise en place du trigger
 Maintenant que nous avons un item nous pouvons mettre en place un trigger qui ce déclenchera dès que notre service stoppera aller dans trigger de notre template puis "create trigger"  puis dans expression faites comme ceci :
