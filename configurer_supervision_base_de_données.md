@@ -7,7 +7,7 @@ introduction
 Ce document simple rédigé en Markdown a pour but de documenter la supervision d'une base de données SQL Server, PostgreSQL, Oracle ou encore MariaDB.
 
 
-### Les bases PostgreSQL
+### Les bases PostgreSQL/MySQL/MariaDB
 
 Nous allons commencer par superviser une base de données PostgreSQL. Pour cela nous allons utiliser la documentation officiel de zabbix.
 
@@ -108,7 +108,7 @@ Pour vérifier la connexion on utilise la commande suivante :
 
 ![Creation de l'item de monitoring de la base de données](/image/create_item_monitor_pgsqlDB.png)
 
-ici on compte le nombre d'hôte une solution alternative est :
+Ici on compte le nombre d'hôte une solution alternative est :
 
     SELECT
     SUM(pg_relation_size(C.oid))
@@ -117,10 +117,21 @@ ici on compte le nombre d'hôte une solution alternative est :
     WHERE nspname NOT IN ('pg_catalog', 'information_schema');
 
 Cette requête nous permet de remonter la taille de la base de données.
+#### Nota Bene
+Pour configurer mariaDB ou mysql il faut installer :
 
+      yum install mysql-connector-odbc
+Pour MariaDB :
+  * https://senzing.zendesk.com/hc/en-us/articles/360008315753-Setup-MariaDB-on-Linux
+  * https://blog.sleeplessbeastie.eu/2018/01/08/how-to-install-and-configure-mariadb-unixodbc-driver/
+
+Puis changer le fichier de configuration en conséquence (changer le nom entre croché et le driver appelé).
 #### voie d'exploration
 * http://pg-monz.github.io/pg_monz/index-en.html#install
 
+### Les bases de données Oracle
+  https://wiki.liutyi.info/display/DEVOPS/Orabbix+Oracle+monitoring+with+Zabbix
+  
 ### Sources
 * https://www.zabbix.com/documentation/4.0/manual/config/items/itemtypes/odbc_checks
 * https://www.zabbix.com/documentation/4.0/manual/config/items/itemtypes/odbc_checks/unixodbc_postgresql
