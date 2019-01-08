@@ -6,6 +6,19 @@ introduction
 ----
 Ce document simple rédigé en Markdown a pour but de documenter la mise en place de Zabbix.
 
+### Les éléments requis
+| éléments  | Status      | Description |
+| ----------| ----------- | ------- |
+| libpcre   | Obligatoire |     PCRE library is required for Perl Compatible Regular Expression (PCRE) support. The naming may differ depending on the GNU/Linux distribution, for example 'libpcre3' or 'libpcre1'. Note that you need exactly PCRE (v8.x); PCRE2 (v10.x) library is not used.
+| libevent  | Obligatoire | Required for bulk metric support and IPMI monitoring. Version 1.4 or higher. Note that for Zabbix proxy this requirement is optional; it is needed for IPMI monitoring support.
+| OpenIPMI  | Optionel    |   Required for IPMI support.
+| libssh2   | Optionel    |   Required for SSH support. Version 1.0 or higher.
+| fping     | Optionel    |   Required for ICMP ping items.
+| libcurl   | Optionel    |   Required for web monitoring, VMware monitoring and SMTP authentication. For SMTP authentication, version 7.20.0 or higher is required. Also required for Elasticsearch.
+| libiksemel| Optionel    |   Required for Jabber support.
+| libxml2   | Optionel    |   Required for VMware monitoring.
+| net-snmp  | Optionel    |   Required for SNMP support.
+
 ### Configuration de base
 la configuration utilisé pour la mise en place de cette configuration est la suivante :
 * OS : CentOS
@@ -35,8 +48,8 @@ yum install https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-
       yum install zabbix-server-pgsql zabbix-web-pgsql
 
 ### configuration de la base de données
-<!--
-on active le service et on le démarre :
+/!\ Attention cette partie n'ai pas forcément obligatoire mais et plus de débug
+On active le service et on le démarre :
 
     systemctl enable postgresql
     systemctl start postgresql
@@ -44,7 +57,9 @@ on active le service et on le démarre :
 /!\ si le service ne démarre pas il est possible qu'il faille initialiser postgresql :
 
     postgresql-setup initdb
--->
+
+/!\ fin de la partie moyenement utile
+
 Création de l'utilisateur "zabbix" avec entré de mot de passe, pour cela on passe sousl'utilisateur postgres puis on fait la création :
 
     su - postgres
@@ -113,3 +128,4 @@ nous allons ajouter 2 règle au pare-feu pour autoriser l'agent du serveur à tr
 
 * https://www.zabbix.com/documentation/3.0/manual/installation/install_from_packages/server_installation_with_postgresql
 * https://www.zabbix.com/documentation/3.0/manual/installation/install#installing_frontend
+* https://www.zabbix.com/documentation/3.4/manual/installation/requirements#server
