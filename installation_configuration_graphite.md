@@ -208,7 +208,7 @@ On active le démarrage automatique :
 Configuration de NetApp-harvest :
 
     cp /opt/netapp-harvest/netapp-harvest.conf.example /opt/netapp-harvest/netapp-harvest.conf
-
+<!--
 On modifie les configuration :
 
     [default]
@@ -217,7 +217,7 @@ On modifie les configuration :
     password          = <le mot de passe de votre utilisateur>
 
 (pour créer un utilisateur référez-vous au sources)
-
+-->
 Ne démarrer pas netapp-harvest sans avoir configuré la rétention de graphite. Une fois cela
 fait vous pouvez démarrer ce service :
 
@@ -226,13 +226,121 @@ fait vous pouvez démarrer ce service :
 ### Configuration de la baie netapp
 /!\ valable pour version de ontap en version 8.3 et supérieur, pour les versions précédente veuiller vous référer à la documentation officielle de netapp
 
-Une fois connecté à votre baie netapp entrer la commande suivazn
+Une fois connecté à votre baie netapp nous allons commencer par créer un rôle :
 
+    security login role create -role netapp-harvest-role -access readonly -cmddirname "version"
+    security login role create -role netapp-harvest-role -access readonly -cmddirname "cluster identity show"
+    security login role create -role netapp-harvest-role -access readonly -cmddirname "cluster show"
+    security login role create -role netapp-harvest-role -access readonly -cmddirname "system node show"
+    security login role create -role netapp-harvest-role -access readonly -cmddirname "statistics"
+    security login role create -role netapp-harvest-role -access readonly -cmddirname "lun show"
+    security login role create -role netapp-harvest-role -access readonly -cmddirname "network interface show"
+    security login role create -role netapp-harvest-role -access readonly -cmddirname "qos workload show"
+
+Nous créons ensuite un certificat SSL pour la connexion :
+
+1)Sur votre serveur en mode root faite la commande suivante :
+
+    cd /opt/netapp-harvest/cert
+    openssl req -x509 -nodes -days 3650 -newkey rsa:1024 -keyout netapp-harvest.key -out netapp-harvest.pem
+
+Maintenant installons le certificat sur le serveur :
+
+    /!\ remplacer cluster par le nom de votre cluster
+    security certificate install -type client-ca -vserver cluster
+
+Ensuite copier le contenu du fichier .pem créé sur le serveur avec harvest exemple :
+
+    cluster::> security certificate install -type client-ca -vserver cluster
+    Please enter Certificate: Press <Enter> when done
+    -----BEGIN CERTIFICATE-----
+    MIIChDCCAe2gAwIBAgIJAKgurBmDXc3uMA0GCSqGSIb3DQEBBQUAMFsxCzAJBgNV
+    BAYTAk5MMRUwEwYDVQQHDAxEZWZhdWx0IENpdHkxHDAaBgNVBAoME0RlZmF1bHQg
+    Q29tcGFueSBMdGQxFzAVBgNVBAMMDm5ldGFwcC1oYXJ2ZXN0MB4XDTE1MDYyNjEw
+    MTk1NloXDTI1MDYyMzEwMTk1NlowWzELMAkGA1UEBhMCTkwxFTATBgNVBAcMDERl
+    ZmF1bHQgQ2l0eTEcMBoGA1UECgwTRGVmYXVsdCBDb21wYW55IEx0ZDEXMBUGA1UE
+    AwwObmV0YXBwLWhhcnZlc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMyq
+    Qq6qXRW7czWRNHYMfmlZjpr0FV/VmOv0Brt9Ij7+tHYb+CcIKVyj/gv0RM8DGJ5L
+    X7VrdrnpINAu6tghBS6YOG2Nr1h9CRunBR91Hm2/DPKA7C0cNjg6EHuJkYLOVF21
+    nmRpdAXDURBfw89v1YrZz7uc6LBqGX8SRqi0y0OvAgMBAAGjUDBOMB0GA1UdDgQW
+    BBTOMM2pC8HH0aK9ZRGw5OxOqcV7RDAfBgNVHSMEGDAWgBTOMM2pC8HH0aK9ZRGw
+    5OxOqcV7RDAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAFrg5HjXtZ8q
+    YkRcnCyekvdtFT1a18FyWjDUkRtldySyRgsdtwcF6BoYiVvEmjPVX2QR8n6u8G/R
+    Ii+6MWt+ODwPTvzZX6k92ni3yDr0Ffghjj9V5+UZEK8aGHPnD4kpt/sAnJf3gbzO
+    WswIMiWH6mYaYLnkGDAze9UuXZcEuw4E
+    -----END CERTIFICATE-----
+
+Maintenant nous allons autoriser la connection des clients SSL
+
+    /!\ remplacer clustername par le nom de votre cluster
+    security ssl modify -client-enabled true -vserver clustername
+
+Pour la création d'utilisateur pour l'api uniquement :
+
+    security login create -user-or-group-name netapp-harvest -application ontapi -role netapp-harvest-role -authmethod cert
+
+On change le propriétaire de netapp-harvest :
+
+    chown netapp-harvest:netapp-harvest /opt/netapp-harvest/netapp-harvest.conf
+
+On configure la connection par ssl
+
+    auth_type         = ssl_cert
+    ssl_cert          = cert/netapp-harvest.pem  
+    ssl_key           = cert/netapp-harvest.key
+
+Ensuite déclarer le cluster :
+
+    [cluster_1]
+    hostname = url.fr
+    group = netapp-harvest
+
+
+Pour finir lancer le poller si vous avez correctement configuré graphite
+
+    ./opt/netapp-harvest/netapp-manager -start
+
+
+### Paramétrage de la rétention
+
+Nous allons commencer par éditer le fichier de configuration :
+
+    nano /opt/graphite/conf/storage-schemas.conf
+
+Commenter l'ensemble du fichier et remplacer le par le contenu suivant :
+
+    # Schema definitions for Whisper files. Entries are scanned in order,
+    # and first match wins. This file is scanned for changes every 60 seconds.
+    #
+    #  [name]
+    #  pattern = regex
+    #  retentions = timePerPoint:timeToStore, timePerPoint:timeToStore, ...
+
+    # Carbon's internal metrics. This entry should match what is specified in
+    # CARBON_METRIC_PREFIX and CARBON_METRIC_INTERVAL settings
+    #[carbon]
+    #pattern = ^carbon\.
+    #retentions = 60:90d
+
+    #[default_1min_for_1day]
+    #pattern = .*
+    #retentions = 60s:1d
+    [netapp_perf]
+    pattern = ^netapp(\.poller)?\.perf7?\.
+    retentions = 1m:35d,5m:100d,15m:395d,1h:5y
+    [netapp_capacity]
+    pattern = ^netapp(\.poller)?\.capacity\.
+    retentions = 15m:100d,1d:5y
+
+### Interfacage avec Grafana
+Voici comment ajouter la source de données à Grafana, ensuite libre à vous de créer vos dashboard
+
+![Interfacage avec Grafana](/image/ajout_source_graphite.png)
 
 ### Troubleshooting
 
 Si lors de l'initialisons de la base de données vous avez un problème de caractères non-ASCII
-dans un fichier .py ajouter "__ # coding=utf-8 __ " en en-tête du fichier. J'ai eu le cas pour ce fichier :
+dans un fichier .py ajouter "__# coding=utf-8__" en en-tête du fichier. J'ai eu le cas pour ce fichier :
 *    /opt/graphite/webapp/graphite/local_settings.py
 
 
