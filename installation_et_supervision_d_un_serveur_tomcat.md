@@ -2,7 +2,7 @@
 <center>Documentation de mise en place d'une supervision web</center>
 =======
 ------------------------------
-introduction
+Introduction
 ----
 
 Ce document simple rédigé en Markdown a pour but de documenter la mise en place d'un serveur tomcat 8 et de sa supervision dans zabbix.

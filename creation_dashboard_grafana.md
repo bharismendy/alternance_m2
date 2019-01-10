@@ -2,7 +2,7 @@
 <center>Documentation de création d'un tableau de bord</center>
 =======
 ------------------------------
-introduction
+Introduction
 ----
 Ce document simple rédigé en Markdown a pour but de documenter la création d'un tableau de bord.
 

@@ -2,7 +2,7 @@
 <center>Documentation de mise en place d'une supervision web</center>
 =======
 ------------------------------
-introduction
+Introduction
 ----
 Ce document simple rédigé en Markdown a pour but de documenter la mise en place d'une supervision de site web pour cela nous allons créer un web scénarios qui sera composé de "steps" qui sont des requêtes HTTP, ces dernières seront exécuté de manière périodique par le serveur zabbix ou par le proxy de l'hôte si il est derrière ce dernier .
 

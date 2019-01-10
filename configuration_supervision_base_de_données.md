@@ -2,7 +2,7 @@
 <center>Documentation de la mise en place de la supervision d'une base de donnée </center>
 =======
 ------------------------------
-introduction
+Introduction
 ----
 Ce document simple rédigé en Markdown a pour but de documenter la supervision d'une base de données SQL Server, PostgreSQL, Oracle ou encore MariaDB.
 
@@ -131,7 +131,7 @@ Puis changer le fichier de configuration en conséquence (changer le nom entre c
 
 ### Les bases de données Oracle
   https://wiki.liutyi.info/display/DEVOPS/Orabbix+Oracle+monitoring+with+Zabbix
-  
+
 ### Sources
 * https://www.zabbix.com/documentation/4.0/manual/config/items/itemtypes/odbc_checks
 * https://www.zabbix.com/documentation/4.0/manual/config/items/itemtypes/odbc_checks/unixodbc_postgresql

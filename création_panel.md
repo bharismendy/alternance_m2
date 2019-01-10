@@ -2,7 +2,7 @@
 <center>Documentation de la mise en place d'un panel singlestat</center>
 =======
 ------------------------------
-introduction
+Introduction
 ----
 Ce document simple rédigé en Markdown a pour but de documenter la mise en place d'un panel.
 
