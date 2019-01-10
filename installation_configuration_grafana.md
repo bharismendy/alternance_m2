@@ -82,6 +82,8 @@ allez ensuite sur "add data Source" :
 
 ![creation du watcher](/image/creation_watcher.png)
 
+ici j'utilise un compte admin car on est sur une compte sans grand intérêt, dans les faits
+ quand vous êtes en production utilisez un compte ayant uniquement les droits de lecture 
 ### Sources
 
 * http://docs.grafana.org/installation/rpm/

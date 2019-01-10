@@ -343,6 +343,17 @@ Si lors de l'initialisons de la base de données vous avez un problème de carac
 dans un fichier .py ajouter "__# coding=utf-8__" en en-tête du fichier. J'ai eu le cas pour ce fichier :
 *    /opt/graphite/webapp/graphite/local_settings.py
 
+En cas de fichier de whisper corrompu à cause d'un manque d'espace disque vous pouvez exécuter la commande suivante :
+
+    grep 'Error writing to ' /opt/graphite/storage/log/carbon-cache/carbon-cache-a/console.log |awk '{print $NF}' |sort -u | xargs rm -f
+
+    How to detect that?
+
+    find  /opt/graphite/storage/whisper/ -type f -empty
+
+    How to fix that?
+
+    find  /opt/graphite/storage/whisper/ -type f -empty -delete
 
 ### Source
 
@@ -354,3 +365,8 @@ Création d'utilisateur :
 
 Installation de netapp-harvest :
 * NetAppHarvest/NetApp_Harvest_IAG_1.4.1.pdf
+
+Autre
+
+
+* https://github.com/graphite-project/carbon/issues/327
