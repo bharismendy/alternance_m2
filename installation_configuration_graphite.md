@@ -351,3 +351,6 @@ Lien de la documentation d'Installation et de configuration
 
 Création d'utilisateur :
 * http://blog.asquareb.com/blog/2014/11/19/adding-users-to-graphite/
+
+Installation de netapp-harvest :
+* NetAppHarvest/NetApp_Harvest_IAG_1.4.1.pdf
