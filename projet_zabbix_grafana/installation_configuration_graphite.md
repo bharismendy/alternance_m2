@@ -335,7 +335,7 @@ Commenter l'ensemble du fichier et remplacer le par le contenu suivant :
 ### Interfacage avec Grafana
 Voici comment ajouter la source de données à Grafana, ensuite libre à vous de créer vos dashboard
 
-![Interfacage avec Grafana](/image/ajout_source_graphite.png)
+<img alt="Interfacage avec Grafana" src="/image/ajout_source_graphite.png"/>
 
 ### Troubleshooting
 

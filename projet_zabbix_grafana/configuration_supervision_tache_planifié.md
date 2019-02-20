@@ -35,7 +35,7 @@ on insère ceci pour que le service redémarre toute les minutes :
 
 On créé l'item :
 
-![création de l'item pour la tâche planifié](/image/creation_item_tache_planifie.png)
+<img alt="création de l'item pour la tâche planifié" src="/image/creation_item_tache_planifie.png"/>
 
 la commande à entrer est la suivante :
 
@@ -45,7 +45,7 @@ la commande à entrer est la suivante :
 
 Voici le screen du trigger :
 
-![création trigger tache planifier](/image/creation_trigger_tache_planifié.png)
+<img alt="création trigger tache planifier" src="/image/creation_trigger_tache_planifié.png" />
 
 A noter que l'on indique ">=60" car on souhaite être signaler si le process a plus de 60 second.
 

@@ -3,11 +3,13 @@ import os
 import sys
 import getopt
 import shutil
+from md2pdf.core import md2pdf
 
 
 def generate_pdf(path):
     # this function list all markdown file and generate the pdf file
     # param path = path to the target directory
+
     destination_dir = "pdf"
     if os.path.isdir(os.path.join(path, destination_dir)):
         shutil.rmtree(os.path.join(path, destination_dir))
@@ -32,6 +34,18 @@ def generate_pdf(path):
         p.wait()
     print("the work is done")
 
+    """
+    
+    destination_dir = "pdf2"
+    if os.path.isdir(os.path.join(path, destination_dir)):
+        shutil.rmtree(os.path.join(path, destination_dir))
+    os.mkdir(os.path.join(path, destination_dir))
+    for dirpath, dirnames, filenames in os.walk("."):
+        for filename in [f for f in filenames if f.endswith(".md")]:
+            if not filename == 'README.md':
+                print("start " + filename)
+                md2pdf(os.path.join(path, destination_dir, filename + ".pdf"), md_content=None, md_file_path=os.path.join(dirpath, filename))
+    """
 
 def main(argv):
     try:

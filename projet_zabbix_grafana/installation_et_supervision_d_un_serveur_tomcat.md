@@ -126,11 +126,11 @@ on est ici dans le cas d'une machine de test donc j'ai laissé jmxremote.authent
 ### Configuration de Zabbix
 Nous allons maintenant déclarer l'interface JMX sur le serveur concerné (attention le port est bien le 12345):
 
-![ajout de l'interface jmx](/image/creation_interface.png)
+<img alt="ajout de l'interface jmx" src="image/creation_interface.png"/>
 
 maintenant que l'interface existe il faut ajouter un item de gestion de l'agent jmx :
 
-![ajout de l'item jmx](/image/creation_item_jmx.png)
+![ajout de l'item jmx](image/creation_item_jmx.png)
 
 ### Sources
 

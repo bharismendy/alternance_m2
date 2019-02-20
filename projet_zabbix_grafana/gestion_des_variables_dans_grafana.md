@@ -12,15 +12,15 @@ Dans un premier temps ce qu'il faut savoir c'est que les variables sont propre �
 
 étape 1 : ce rendre dans les paramètres
 
-![accès aux paramètres](/image/crea_var_et_1.png)
+<img alt="accès aux paramètres" src="/image/crea_var_et_1.png"/>
 
 étape 2 : allez dans la section "Variables" puis cliquer sur "+ New"
 
-![création de la variable](/image/crea_var_et_2.png)
+<img alt="création de la variable" src="/image/crea_var_et_2.png"/>
 
 étape 3 : Configuration de la variable, vous trouverez ci-dessous une configuration de variable
 
-![Configuration de la variable](/image/crea_var_et_3.png)
+<img alt="Configuration de la variable" src="/image/crea_var_et_3.png"/>
 
 Sur ce panneau on retrouve plusieurs champs :
 
@@ -41,8 +41,8 @@ Une fois ces champs renseigné vous pouvez cliquer add ou update pour valider la
 
 Dans le tableau de bord vous verrez maintenant votre variable :
 
-![affichage de la variable](/image/var_view.png)
+<img alt="affichage de la variable" src="/image/var_view.png"/>
 
 Pour l'utilisation dans une métrique il suffit de la mettre là ou vous pourriez mettre une des valeurs qu'elle contient. Exemple :
 
-![utilisation d'une variable](/image/use_var.png)
+<img alt="utilisation d'une variable" src="/image/use_var.png"/>

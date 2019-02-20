@@ -106,7 +106,7 @@ Pour vérifier la connexion on utilise la commande suivante :
 
 #### Création de l'item
 
-![Creation de l'item de monitoring de la base de données](/image/create_item_monitor_pgsqlDB.png)
+<img alt="Creation de l'item de monitoring de la base de données" src="/image/create_item_monitor_pgsqlDB.png"/>
 
 Ici on compte le nombre d'hôte une solution alternative est :
 

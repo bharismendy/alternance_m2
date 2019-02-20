@@ -23,21 +23,21 @@ Pour finir on peut également tester la présence d'une chaîne de caractère su
 ### Configurer un web scénario
 Aller dans Configurations puis Template, ensuite cliquer sur web dans la ligne du template. sur la page qui s'affiche cliquer sur "create web scenario"
 
-![étapes 1 de création de l'hôte](/image/creation_scenario_1.png)
+<img alt="étapes 1 de création de l'hôte" src="/image/creation_scenario_1.png"/>
 
-![étapes 2 de création de l'hôte](/image/creation_scenario_2.png)
+<img alt="étapes 2 de création de l'hôte" src="/image/creation_scenario_2.png" />
 
 Nous avons ensuite un premier formulaire à remplir :
 
-![étapes 3 de création de l'hôte](/image/creation_scenario_3.png)
+<img alt="étapes 3 de création de l'hôte" src="/image/creation_scenario_3.png" />
 
 une fois le scénario remplie nous nous rendons sur l'onglet Steps puis on clique sur "add" et de nouveau on remplie un formulaire :
 
-![étapes 4 de création de l'hôte](/image/creation_scenario_4.png)
+<img alt="étapes 4 de création de l'hôte" src="/image/creation_scenario_4.png" />
 
 pour finir on dispose d'un onglet authentification qui nous sera inutile dans notre cas
 
-![étapes 5 de création de l'hôte](/image/creation_scenario_5.png)
+<img alt="étapes 5 de création de l'hôte" src="/image/creation_scenario_5.png" />
 
 ### Sources
 * https://www.zabbix.com/documentation/4.0/manual/web_monitoring

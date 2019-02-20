@@ -10,9 +10,9 @@ Ce document simple rédigé en Markdown a pour but de documenter la mise en plac
 ### Ajout d'un panel
 Nous commençons par ajouter un panel dans notre cas un singlestat :
 
-![ajout d'un panel étape 1](/image/creation_panel_1.png)
+<img alt="ajout d'un panel étape 1" src="/image/creation_panel_1.png"/>
 
-![ajout d'un panel étape 2](/image/creation_panel_2.png)
+<img alt="ajout d'un panel étape 2" src="/image/creation_panel_2.png"/>
 
 ### Configuration du panel
 
