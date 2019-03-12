@@ -1,4 +1,6 @@
+#!/usr/bin/python3.4
 # -*- coding: utf-8 -*-
+# PYTHON_ARGCOMPLETE_OK
 # the goal of this script is to automatically to delete vm on an ovirt server
 
 import argparse
@@ -12,6 +14,7 @@ from lib.my_ovirt import MyOVirt
 import time
 import ovirtsdk4.types as types
 from zabbix.api import ZabbixAPI
+import subprocess
 
 
 class ConfigVmCloner(Config):
@@ -88,6 +91,16 @@ def delete_vm(args):
             dnsmgr = DNSMgr(**cfg['dnsmgr'])
             # getting domain name
             domain_name = fqdn.replace(args.name+'.', '')
+            print("-----------------------------------------------------------")
+            subprocess.run(["nslookup", fqdn])
+            print("-----------------------------------------------------------")
+            while True:
+                answer = input("do you want to continue ? (y/n)")
+                if answer.lower() == 'y':
+                    break
+                elif answer.lower() == 'n':
+                    print("exit of the script")
+                    exit(1)
             dnsmgr.remove_record(name=args.name, ip=ip, domain=domain_name)
         except():
             print("/!\\error can't delete the DNS record !/!\\")
@@ -119,6 +132,8 @@ def delete_vm(args):
         if len(hostnames) == 1:
             id_host = [hosts[0]['hostid']]
             zapi.do_request(method='host.delete', params=id_host)
+        elif len(hostnames):
+            print("no host found on the zabbix server !")
         else:
             print("/!\\ Problem on the number of host found on the Zabbix server /!\\")
             print("------- Here is the list --------")

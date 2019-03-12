@@ -3,7 +3,7 @@
 
 import re
 
-from my_ovirt import MyOVirt
+from lib.my_ovirt import MyOVirt
 
 
 shortcuts = {

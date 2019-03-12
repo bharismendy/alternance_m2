@@ -11,7 +11,6 @@ from lib.policies import Policies
 from lib.vm_cloner import VMCloner
 from lib.ipam_client import IpamClient
 from lib.dnsmgr import DNSMgr
-from lib import observium_mgr
 VERSION = 'sc-generic-2017-04-07'
 
 
@@ -67,9 +66,6 @@ def create_vm(name, ram=1024, cores=2, vmtype='centos7', zone='lan',
         cloner.tag_vm(['script-created', VERSION])
         cloner.attach_disks()
         cloner.cloud_init()
-
-        # adding the vm on observium
-        observium_mgr.register_device(hostname=cloner.fqdn)
 
     if ip:
         dnsmgr = DNSMgr(**cfg['dnsmgr'])

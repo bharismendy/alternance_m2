@@ -4,7 +4,7 @@
 import re
 import socket
 
-from my_ovirt import MyOVirt
+from lib.my_ovirt import MyOVirt
 
 svm_list = [
     'engine.nfs.cg49.fr',

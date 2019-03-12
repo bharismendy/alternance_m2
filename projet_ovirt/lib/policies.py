@@ -4,7 +4,7 @@ import os
 import re
 import sys
 
-import crypt
+import lib.crypt
 from importlib import import_module
 
 

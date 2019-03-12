@@ -6,7 +6,7 @@ import sys
 
 import ovirtsdk4.types as types
 
-from my_ovirt import MyOVirt
+from lib.my_ovirt import MyOVirt
 
 
 os_type = {'?': 0}

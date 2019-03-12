@@ -25,7 +25,7 @@ class MyOVirtConfig(Config):
 
 class MyOVirt(ovirt_services.OVirtServices):
     def __init__(self, cfg_file=None):
-        self.cfg = MyOVirtConfig(cfg_file = cfg_file)
+        self.cfg = MyOVirtConfig(cfg_file=cfg_file)
         super().__init__(**self.cfg.ovirt)
 
     def list_vms(self, query=None, only_up=False):
@@ -42,7 +42,6 @@ class MyOVirt(ovirt_services.OVirtServices):
             result.append("{}".format(vm.name))
 
         return result
-
 
     def list_hosts(self, query=None, only_up=False):
         result = []

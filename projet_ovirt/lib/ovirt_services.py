@@ -24,6 +24,7 @@ runcmd:
     - [ /tmp/disable.sh ]
 """
 
+
 class OVirtServices:
     def __init__(self, url, username, password, insecure, ca_file, debug, connections, pipeline):
         self.connection = sdk.Connection(

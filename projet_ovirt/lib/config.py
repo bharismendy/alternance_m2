@@ -8,8 +8,8 @@ ENVIRON_VAR = "OVIRT4_SCRIPTS_INI"
 DEFAULT_CFGFILE = "/etc/ovirt4scripts.ini"
 
 LOCAL_CFGFILE = {
-        'HOME' : '.ovirt4scripts.ini',                 # Pour linux 
-        'USERPROFILE' : 'ovirt4scripts.ini',           # Pour Windows
+        'HOME': '.ovirt4scripts.ini',                 # Pour linux
+        'USERPROFILE': 'ovirt4scripts.ini',           # Pour Windows
     }
 
 
