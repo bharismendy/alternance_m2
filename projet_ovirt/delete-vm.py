@@ -18,6 +18,9 @@ import subprocess
 
 
 class ConfigVmCloner(Config):
+    """
+    get the configuration to access to ovirt / ipam / dns
+    """
     def __init__(self, cfg_file=None, with_ipam=True):
         super().__init__(cfg_file)
         self.ovirt = self.config['ovirtengine']
@@ -90,9 +93,11 @@ def delete_vm(args):
         try:
             dnsmgr = DNSMgr(**cfg['dnsmgr'])
             # getting domain name
-            domain_name = fqdn.replace(args.name+'.', '')
+            domain_name = fqdn.replace(args.name + '.', '')
             print("-----------------------------------------------------------")
-            subprocess.run(["nslookup", fqdn])
+            p = subprocess.Popen(["nslookup", fqdn], stdout=subprocess.PIPE)
+            text = p.stdout.read()
+            print(text.decode('utf-8'))
             print("-----------------------------------------------------------")
             while True:
                 answer = input("do you want to continue ? (y/n)")
