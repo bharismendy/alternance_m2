@@ -7,7 +7,7 @@ import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 
-class IpamClient():
+class IpamClient:
     def __init__(self, username, password, owner, url, verify):
         """Création d'une session vers un serveur PHPIpam.
 
