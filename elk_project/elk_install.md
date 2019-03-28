@@ -77,6 +77,7 @@ ajouter le contenu suivant :
     autorefresh=1
     type=rpm-md
 
+
 Enfin on lance l'installation d'elasticsearch :
 
     sudo yum install elasticsearch

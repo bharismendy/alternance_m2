@@ -24,16 +24,22 @@ Ensuite nous entrons le contenu suivant :
     sslverify=1
     sslcacert=/etc/pki/tls/certs/ca-bundle.crt
 
+
 Pour finir on installe le paquet grafana :
 
     yum install grafana
 
-### configuration de base de grafana
+installation via un lien vers le paquet :
+
+    sudo yum install https://dl.grafana.com/oss/release/grafana-5.4.2-1.x86_64.rpm
+
+
+### Configuration de base de grafana
 
 On commence par activer le service au démarrage et on le démarre :
 
     systemctl enable grafana-server
-    systemctl enable grafana-server
+    systemctl start grafana-server
 
 activation de l'option de rendu d'image :
 
@@ -47,6 +53,7 @@ on autorise Grafana à utiliser le port 80 :
 
 dans le fichier de configuration on modifie les lignes suivantes (note, le point-virgule est utilisé pour commenter un paramètre dans les fichiers .ini):
 
+    vim /etc/grafana/grafana.ini
     http_port = 80
     domain = xbricegr2.cg49.fr
 
