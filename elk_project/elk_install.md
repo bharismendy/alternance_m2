@@ -389,7 +389,12 @@ test de l'installation :
 
     curl http://www.elastic.co/ > /dev/null
     curl -XGET 'http://localhost:9200/packetbeat-*/_search?pretty'
+### trouble shhoting
+en cas de manque de place on peut vouloir une suppresion automatique des données c'est faisable avec cette commande :
 
+    curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_all/_settings -d '{"index.blocks.read_only_allow_delete": null}'
+
+A noter qu'ElasticSearch stop le stockage à partir de 94% de remplissage par défaut
 ### Sources
 
  * nginx :  https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7
