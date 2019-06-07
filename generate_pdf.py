@@ -5,7 +5,7 @@ import getopt
 import shutil
 from md2pdf.core import md2pdf
 
-
+# new commande : pandoc installation_configuration_grafana.md --pdf-engine=xelatex -o example13.pdf -f markdown-implicit_figures
 def generate_pdf(path):
     # this function list all markdown file and generate the pdf file
     # param path = path to the target directory

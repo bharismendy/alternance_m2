@@ -82,12 +82,12 @@ Ensuite allez dans votre interface web et passez le plugin en "enable" :
 <img alt="étape 1 activation" src="/image/enable_zabbix_1.png"/>
 cliquer sur le bouton enable une nouvelle fois :
 
-<img alt="étape 2 activation" src="/image/enable_zabbix_2.png"/>
+![étape 2 activation](image/enable_zabbix_2.png)
 
 
 allez ensuite sur "add data Source" :
 
-<img alt="creation du watcher" src="/image/creation_watcher.png"/>
+![creation du watcher](image/creation_watcher.png)
 
 ici j'utilise un compte admin car on est sur une compte sans grand intérêt, dans les faits
  quand vous êtes en production utilisez un compte ayant uniquement les droits de lecture
