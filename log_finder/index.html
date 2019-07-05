@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <title>log Finder</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+  </head>
+  <body onload="parse_get_onload();">
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <p class="lead">Système de recherche dans les fichiers log des colleges</p>
+      <div class="container">
+        <div class="row mx-auto">
+          <div id="result_div" class="col col-12 mx-auto">
+            <form method="get">
+              <div class="form-row align-items-center">
+                <div class="col-sm-8 my-1">
+                  <input type="text" class="form-control" required="required" name="search_field" placeholder="Your search">
+                </div>
+                <div class="col-sm-2 my-1">
+                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" required="required" name="college_field" id="list_college">
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+              </div>
+              <div class="form-row">
+                  <label class="col-form-label col-sm-2" for="timestart">Heure de début</label>
+                  <input type="time" name="time_start_field" id="timestart" step="1" class="form-control col-sm-2" />
+
+                  <label class="col-form-label col-sm-2" for="timestop">Heure de fin</label>
+                  <input type="time" name="time_stop_field" id="timestop" step="1" class="form-control col-sm-2" />
+
+                  <label class="col-form-label col-sm-2" for="date">Date</label>
+                  <input type="date" name="date_field" id="date" step="1" class="form-control col-sm-2" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row ">
+        <div id="result_div" class="col col-12 mx-auto">
+        </div>
+      </div>
+    </div>
+    <footer>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+              integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+              crossorigin="anonymous">
+      </script>
+      <script type="text/javascript" src="js/main.js"></script>
+
+    </footer>
+  </body>
+</html>

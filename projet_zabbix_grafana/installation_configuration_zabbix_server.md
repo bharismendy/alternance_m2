@@ -7,61 +7,7 @@ Introduction
 Ce document simple rédigé en Markdown a pour but de documenter la mise en place de Zabbix.
 
 ### Les éléments requis
-<table>
-<tr>
-  <th>éléments</th>
-  <th>Status</th>
-  <th>Description</th>
-</tr>
-<tr>
-   <td>libpcre</td>
-   <td>Obligatoire</td>
-   <td>PCRE library is required for Perl Compatible Regular Expression (PCRE) support. The naming may differ depending on the GNU/Linux distribution, for example 'libpcre3' or 'libpcre1'. Note that you need exactly PCRE (v8.x); PCRE2 (v10.x) library is not used.</td>
-</tr>
-<tr>
-   <td>libevent</td>
-   <td>Obligatoire</td>
-   <td>Required for bulk metric support and IPMI monitoring. Version 1.4 or higher. Note that for Zabbix proxy this requirement is optional; it is needed for IPMI monitoring support.</td>
-</tr>
-<tr>
-   <td>OpenIPMI</td>
-   <td>Optionel</td>
-   <td>Required for IPMI support.</td>
-</tr>
-<tr>
-   <td>libssh2</td>
-   <td>Optionel</td>
-   <td>Required for SSH support. Version 1.0 or higher.</td>
-</tr>
-<tr>
-   <td>fping</td>
-   <td>Optionel</td>
-   <td>Required for ICMP ping items.</td>
-</tr>
-<tr>
-   <td>libcurl</td>
-   <td>Optionel</td>
-   <td>Required for web monitoring, VMware monitoring and SMTP authentication. For SMTP authentication, version 7.20.0 or higher is required. Also required for Elasticsearch.</td>
-</tr>
-<tr>
-   <td>libiksemel</td>
-   <td>Optionel</td>
-   <td>Required for Jabber support.</td>
-</tr>
-<tr>
-   <td>libxml2</td>
-   <td>Optionel</td>
-   <td>Required for VMware monitoring.</td>
-</tr>
-<tr>
-   <td>net-snmp</td>
-   <td>Optionel</td>
-   <td>Required for SNMP support.
-</td>
-</tr>
-</table>
 
-<!--
 | éléments  | Status      | Description |
 | ----------| ----------- | ------- |
 | libpcre   | Obligatoire |     PCRE library is required for Perl Compatible Regular Expression (PCRE) support. The naming may differ depending on the GNU/Linux distribution, for example 'libpcre3' or 'libpcre1'. Note that you need exactly PCRE (v8.x); PCRE2 (v10.x) library is not used.
@@ -73,7 +19,7 @@ Ce document simple rédigé en Markdown a pour but de documenter la mise en plac
 | libiksemel| Optionel    |   Required for Jabber support.
 | libxml2   | Optionel    |   Required for VMware monitoring.
 | net-snmp  | Optionel    |   Required for SNMP support.
--->
+
 ### Configuration de base
 la configuration utilisé pour la mise en place de cette configuration est la suivante :
 * OS : CentOS
@@ -125,7 +71,8 @@ Avec l'utilisateur précédemment créé nous allons mettre la base de données 
     su - postgres
     createdb -O zabbix -E Unicode -T template0 zabbix
 
-on met en place le shéma :
+on met en place le shéma (attention à la version !) :
+
      zcat /usr/share/doc/zabbix-server-pgsql-4.0.0/create.sql.gz  | sudo -u zabbix psql zabbix
 
 ensuite rendez-vous dans le fichier suivant et renseignez les champs demandé :
