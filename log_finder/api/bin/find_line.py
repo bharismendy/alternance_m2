@@ -3,6 +3,7 @@ from datetime import datetime, timedelta, date
 import gzip
 import os
 import sys, getopt
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from setting import DATA_DIR, PREFIX_FILE, SUFFIX_COMPRESS
 
 

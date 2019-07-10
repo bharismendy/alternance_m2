@@ -1,6 +1,8 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
 from json import dumps
+import sys,os
+sys.path.append(os.path.dirname(os.path.abspath(__file__))+"/bin")
 from bin.find_line import search_in_file
 from bin.get_college import get_college_list
 from flask_cors import CORS
