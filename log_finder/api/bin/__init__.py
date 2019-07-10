@@ -1,1 +1,0 @@
-from setting import BASE_DIR, DATA_DIR, PREFIX_FILE, SUFFIX_COMPRESS
