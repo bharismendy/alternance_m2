@@ -33,9 +33,9 @@ def generate_pdf(path):
     for p in list_of_process:
         p.wait()
     print("the work is done")
-
+# sudo pandoc installation_configuration_grafana.md --pdf-engine=xelatex -o example13.pdf -f markdown-implicit_figures
     """
-    
+
     destination_dir = "pdf2"
     if os.path.isdir(os.path.join(path, destination_dir)):
         shutil.rmtree(os.path.join(path, destination_dir))

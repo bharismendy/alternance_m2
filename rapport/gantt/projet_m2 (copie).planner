@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<project name="Alternance M2" company="" manager="" phase="" project-start="20181015T000000Z" mrproject-version="2" calendar="1">
+  <properties/>
+  <phases>
+    <phase name="Test"/>
+    <phase name="Mise en production"/>
+  </phases>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="Travaill&#xE9;" description="Un jour de travail normal"/>
+      <day-type id="1" name="Ch&#xF4;m&#xE9;" description="Un jour ch&#xF4;m&#xE9; normal"/>
+      <day-type id="2" name="Utiliser la base" description="Utilise un jour du calendrier de base"/>
+      <day-type id="3" name="aprem" description=""/>
+      <day-type id="4" name="matin" description=""/>
+    </day-types>
+    <calendar id="1" name="D&#xE9;faut">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="0800" end="1200"/>
+          <interval start="1300" end="1700"/>
+        </overridden-day-type>
+        <overridden-day-type id="4">
+          <interval start="0800" end="1200"/>
+        </overridden-day-type>
+        <overridden-day-type id="3">
+          <interval start="1300" end="1700"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days>
+        <day date="20190325" type="day-type" id="4"/>
+        <day date="20190130" type="day-type" id="1"/>
+        <day date="20181207" type="day-type" id="1"/>
+        <day date="20190521" type="day-type" id="1"/>
+        <day date="20181226" type="day-type" id="1"/>
+        <day date="20181102" type="day-type" id="1"/>
+        <day date="20190114" type="day-type" id="1"/>
+        <day date="20181121" type="day-type" id="1"/>
+        <day date="20190621" type="day-type" id="4"/>
+        <day date="20181210" type="day-type" id="1"/>
+        <day date="20190524" type="day-type" id="1"/>
+        <day date="20190808" type="day-type" id="1"/>
+        <day date="20181105" type="day-type" id="1"/>
+        <day date="20190117" type="day-type" id="1"/>
+        <day date="20190805" type="day-type" id="1"/>
+        <day date="20190205" type="day-type" id="1"/>
+        <day date="20181213" type="day-type" id="1"/>
+        <day date="20190508" type="day-type" id="1"/>
+        <day date="20190101" type="day-type" id="1"/>
+        <day date="20181108" type="day-type" id="1"/>
+        <day date="20190527" type="day-type" id="1"/>
+        <day date="20181127" type="day-type" id="1"/>
+        <day date="20190208" type="day-type" id="1"/>
+        <day date="20190806" type="day-type" id="1"/>
+        <day date="20190227" type="day-type" id="1"/>
+        <day date="20190530" type="day-type" id="1"/>
+        <day date="20190123" type="day-type" id="1"/>
+        <day date="20181130" type="day-type" id="1"/>
+        <day date="20190211" type="day-type" id="1"/>
+        <day date="20181219" type="day-type" id="1"/>
+        <day date="20190514" type="day-type" id="1"/>
+        <day date="20181114" type="day-type" id="1"/>
+        <day date="20181203" type="day-type" id="1"/>
+        <day date="20190214" type="day-type" id="1"/>
+        <day date="20190816" type="day-type" id="1"/>
+        <day date="20190517" type="day-type" id="1"/>
+        <day date="20190129" type="day-type" id="1"/>
+        <day date="20181206" type="day-type" id="1"/>
+        <day date="20190501" type="day-type" id="1"/>
+        <day date="20181225" type="day-type" id="1"/>
+        <day date="20181101" type="day-type" id="1"/>
+        <day date="20190520" type="day-type" id="1"/>
+        <day date="20181120" type="day-type" id="1"/>
+        <day date="20190201" type="day-type" id="1"/>
+        <day date="20190719" type="day-type" id="1"/>
+        <day date="20181228" type="day-type" id="1"/>
+        <day date="20190523" type="day-type" id="1"/>
+        <day date="20190116" type="day-type" id="1"/>
+        <day date="20181123" type="day-type" id="1"/>
+        <day date="20190204" type="day-type" id="1"/>
+        <day date="20181212" type="day-type" id="1"/>
+        <day date="20190507" type="day-type" id="1"/>
+        <day date="20181231" type="day-type" id="1"/>
+        <day date="20181107" type="day-type" id="1"/>
+        <day date="20190807" type="day-type" id="1"/>
+        <day date="20181126" type="day-type" id="1"/>
+        <day date="20190207" type="day-type" id="1"/>
+        <day date="20190809" type="day-type" id="1"/>
+        <day date="20190226" type="day-type" id="1"/>
+        <day date="20190510" type="day-type" id="1"/>
+        <day date="20190529" type="day-type" id="1"/>
+        <day date="20190122" type="day-type" id="1"/>
+        <day date="20181129" type="day-type" id="1"/>
+        <day date="20181218" type="day-type" id="0"/>
+        <day date="20190301" type="day-type" id="1"/>
+        <day date="20190513" type="day-type" id="1"/>
+        <day date="20181113" type="day-type" id="1"/>
+        <day date="20190125" type="day-type" id="1"/>
+        <day date="20190213" type="day-type" id="1"/>
+        <day date="20181221" type="day-type" id="1"/>
+        <day date="20190516" type="day-type" id="1"/>
+        <day date="20181116" type="day-type" id="1"/>
+        <day date="20190128" type="day-type" id="1"/>
+        <day date="20181205" type="day-type" id="1"/>
+        <day date="20190430" type="day-type" id="1"/>
+        <day date="20181224" type="day-type" id="1"/>
+        <day date="20190531" type="day-type" id="1"/>
+        <day date="20181119" type="day-type" id="1"/>
+        <day date="20190131" type="day-type" id="1"/>
+        <day date="20190610" type="day-type" id="1"/>
+        <day date="20190503" type="day-type" id="1"/>
+        <day date="20181227" type="day-type" id="1"/>
+        <day date="20190522" type="day-type" id="1"/>
+        <day date="20190115" type="day-type" id="1"/>
+        <day date="20181122" type="day-type" id="1"/>
+        <day date="20190509" type="day-type" id="1"/>
+        <day date="20181211" type="day-type" id="1"/>
+        <day date="20190506" type="day-type" id="1"/>
+        <day date="20181106" type="day-type" id="1"/>
+        <day date="20190118" type="day-type" id="1"/>
+        <day date="20190528" type="day-type" id="1"/>
+        <day date="20190206" type="day-type" id="1"/>
+        <day date="20181214" type="day-type" id="1"/>
+        <day date="20190225" type="day-type" id="1"/>
+        <day date="20190102" type="day-type" id="1"/>
+        <day date="20181109" type="day-type" id="1"/>
+        <day date="20190121" type="day-type" id="1"/>
+        <day date="20181128" type="day-type" id="1"/>
+        <day date="20190801" type="day-type" id="1"/>
+        <day date="20181217" type="day-type" id="0"/>
+        <day date="20190228" type="day-type" id="1"/>
+        <day date="20190724" type="day-type" id="4"/>
+        <day date="20181112" type="day-type" id="1"/>
+        <day date="20190124" type="day-type" id="1"/>
+        <day date="20190422" type="day-type" id="1"/>
+        <day date="20190212" type="day-type" id="1"/>
+        <day date="20181220" type="day-type" id="1"/>
+        <day date="20190515" type="day-type" id="1"/>
+        <day date="20181115" type="day-type" id="1"/>
+        <day date="20190815" type="day-type" id="1"/>
+        <day date="20181204" type="day-type" id="1"/>
+        <day date="20190215" type="day-type" id="1"/>
+        <day date="20190429" type="day-type" id="1"/>
+        <day date="20190802" type="day-type" id="1"/>
+      </days>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="Projet grafana" note="" work="288000" start="20181015T000000Z" end="20181026T170000Z" work-start="20181015T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="2" name="Projet ELK" note="" work="288000" start="20181026T170000Z" end="20190109T170000Z" work-start="20181029T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="1" type="FS"/>
+      </predecessors>
+    </task>
+    <task id="3" name="Projet automatisation Ovirt" note="" work="288000" start="20181015T000000Z" end="20181026T170000Z" work-start="20181015T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="4" name="Projet Plugin Grafana" note="" work="288000" start="20181015T000000Z" end="20181026T170000Z" work-start="20181015T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="5" name="Projet recherche dans les logs des coll&#xE8;ges" note="" work="288000" start="20181015T000000Z" end="20181026T170000Z" work-start="20181015T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="6" name="Projet Haute disponibilit&#xE9;" note="" work="288000" start="20181015T000000Z" end="20181026T170000Z" work-start="20181015T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+  </tasks>
+  <resource-groups/>
+  <resources>
+    <resource id="1" name="Brice Harismendy" short-name="BH" type="1" units="0" email="" note="" std-rate="0"/>
+  </resources>
+  <allocations/>
+</project>
