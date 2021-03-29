@@ -24,7 +24,7 @@ ptyprocess==0.6.0
 py-zabbix==1.1.5
 pybase64==0.5.0
 pycurl==7.43.0.2
-Pygments==2.3.1
+Pygments==2.7.4
 pylibcurl==0.7.12
 pyparsing==2.3.1
 pytz==2018.9
