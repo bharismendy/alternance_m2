@@ -13,7 +13,7 @@ idna==2.8
 ipython-genutils==0.2.0
 isodate==0.6.0
 jedi==0.13.3
-lxml==4.3.2
+lxml==4.6.3
 ovirt-engine-sdk-python==4.3.0
 parso==0.3.4
 pexpect==4.6.0
