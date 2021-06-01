@@ -78,7 +78,7 @@ tinycss2==1.0.2
 ubuntu-drivers-common==0.0.0
 ufw==0.36
 unattended-upgrades==0.1
-urllib3==1.22
+urllib3==1.26.5
 usb-creator==0.3.3
 vboxapi==1.0
 virtualenv==15.1.0
